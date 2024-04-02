@@ -28,36 +28,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($etudiants as $etudiant )
+
                         <tr>
-                            <td>1</td>
-                            <td>DARE</td>
-                            <td>JACK</td>
-                            <td>3eme Boss</td>
+                            <td>{{$etudiant->id}}</td>
+                            <td>{{$etudiant->nom}}</td>
+                            <td>{{$etudiant->prenom}}</td>
+                            <td>{{$etudiant->classe}}</td>
                             <td>
                                 <a href="#"class="btn btn-warning">Modifier</a>
                                 <a href="#"class="btn btn-danger">Supprimer</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>PARA</td>
-                            <td>OPIO</td>
-                            <td>3eme Boss</td>
-                            <td>
-                                <a href="#"class="btn btn-warning">Modifier</a>
-                                <a href="#"class="btn btn-danger">Supprimer</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>BELOW</td>
-                            <td>KILO</td>
-                            <td>3eme Boss</td>
-                            <td>
-                                <a href="#"class="btn btn-warning">Modifier</a>
-                                <a href="#"class="btn btn-danger">Supprimer</a>
-                            </td>
-                        </tr>
+                        @endforeach
+
+
                     </tbody>
 
                 </table>
