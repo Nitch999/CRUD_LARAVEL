@@ -34,24 +34,30 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php $ide=1;
+                        @endphp
                         @foreach ($etudiants as $etudiant )
 
                         <tr>
-                            <td>{{$etudiant->id}}</td>
+                            <td>{{$ide}}</td>
                             <td>{{$etudiant->nom}}</td>
                             <td>{{$etudiant->prenom}}</td>
                             <td>{{$etudiant->classe}}</td>
                             <td>
                                 <a href="/update-etudiant/{{{$etudiant->id}}}"class="btn btn-warning">Modifier</a>
-                                <a href="#"class="btn btn-danger">Supprimer</a>
+                                <a href="/delete-etudiant/{{{$etudiant->id}}}"class="btn btn-danger">Supprimer</a>
                             </td>
                         </tr>
+                        @php
+                        $ide+=1;
+                        @endphp
                         @endforeach
 
 
                     </tbody>
 
                 </table>
+                {{$etudiants->links()}}
           </div>
 
         </div>
